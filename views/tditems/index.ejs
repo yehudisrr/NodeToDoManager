@@ -1,0 +1,24 @@
+<div class="row">
+<a href='/tditems/newitem' class='btn btn-primary btn-block'>New Item</a>
+<table class='table table-hover table-striped table-bordered'>
+    <tr>
+        <th>Title</th>
+        <th>Category Name</th>
+        <th>Due Date</th>
+        <th>Mark as Completed</th>
+    </tr>
+    <% for(let i= 0; i < tditems.length; i++) { %>
+        <tr class="<%= tditems[i].DueDate < new Date() ? 'table-danger' : '' %>">
+            <td><%= tditems[i].Title %></td>
+            <td><%= tditems[i].Name %></td>
+            <td><%= tditems[i].DueDate.toLocaleDateString('en-US') %></td>
+            <td>
+                <form method="post" action="/tditems/markascompleted">
+                    <input name="id" value="<%= tditems[i].Id %>" type="hidden" />
+                    <button class="btn btn-primary">Mark as Completed</button>
+                </form>
+           </td>
+        </tr>
+    <%}%> 
+</table>
+</div>

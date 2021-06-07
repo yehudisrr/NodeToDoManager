@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>Category Name</th>
+                <th>Due Date</th>
+                <th>Completed Date</th>
+            </tr>
+        
+            <% for(let i= 0; i < tditems.length; i++) { %>
+                <tr class="<%= tditems[i].DueDate < new Date() ? 'table-danger' : '' %>">
+                <td><%= tditems[i].Title %></td>
+                <td><%= tditems[i].Name %></td>
+                <td><%= tditems[i].DueDate.toLocaleDateString('en-US') %></td>
+                <td><%= tditems[i].CompletedDate %></td>
+        </tr> 
+            <%}%> 
+        </table>
+    </div>
+</div>
+

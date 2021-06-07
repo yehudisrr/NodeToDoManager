@@ -1,0 +1,16 @@
+<div class="row">
+    <table class='table table-hover table-striped table-bordered'>
+        <tr>
+            <th>Title</th>
+            <th>Category Name</th>
+            <th>Completed Date</th>
+        </tr>
+        <% for(let i= 0; i < tditems.length; i++) { %>
+            <tr>
+                <td><%= tditems[i].Title %></td>
+                <td><%= tditems[i].Name %></td>
+                <td><%= tditems[i].CompletedDate.toLocaleDateString('en-US') %></td>
+            </tr>
+        <%}%> 
+    </table>
+    </div>
